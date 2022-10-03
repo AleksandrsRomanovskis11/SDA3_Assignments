@@ -1,33 +1,29 @@
-# import the cv2 library
-
 import cv2
 
- 
+image_greyscale = cv2.imread("Assignment0/strumpe.jpg",1)
+#cv2.imshow("image grayscale", image_greyscale)
 
-# The function cv2.imread() is used to read an image.
 
-img_grayscale = cv2.imread('Assignment0/strumpe.jpg',0)
+# let's downscale the image using new  width and height
+down_width = 300
+down_height = 200
+down_points = (down_height, down_width)
+resized_down = cv2.resize(image_greyscale, down_points, interpolation= cv2.INTER_LINEAR)
 
- 
+# let's upscale the image using new  width and height
 
-# The function cv2.imshow() is used to display an image in a window.
+up_width = 600
+up_height = 400
+up_points = (up_width, up_height) 
+resized_up = cv2.resize(image_greyscale, up_points, interpolation=cv2.INTER_LINEAR)
 
-cv2.imshow('graycsale image',img_grayscale)
 
- 
-
-# waitKey() waits for a key press to close the window and 0 specifies indefinite loop
-
-cv2.waitKey(0)
-
- 
-
-# cv2.destroyAllWindows() simply destroys all the windows we created.
+cv2.imshow('Resized down by defining height and width',resized_down)
+cv2.waitKey()
+cv2.imshow('Resized up by defining height and width',resized_up)
+cv2.waitKey()
 
 cv2.destroyAllWindows()
 
- 
-
-# The function cv2.imwrite() is used to write an image.
 
 
