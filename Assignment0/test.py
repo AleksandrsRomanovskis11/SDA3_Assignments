@@ -6,7 +6,7 @@ import cv2
 
 # The function cv2.imread() is used to read an image.
 
-img_grayscale = cv2.imread('backgrounpic.jpg',0)
+img_grayscale = cv2.imread('Assignment0/strumpe.jpg',0)
 
  
 
@@ -30,4 +30,4 @@ cv2.destroyAllWindows()
 
 # The function cv2.imwrite() is used to write an image.
 
-cv2.imwrite('grayscale.jpg',img_grayscale)
+
